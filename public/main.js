@@ -4,13 +4,17 @@ import { Actor, Transform, Sprite, Collider } from './actor.js';
 import { GameSettings } from './gameSettings.js';
 import { SceneManager, Scene } from './sceneManager.js';
 import { input } from './inputHandler.js';
+import { layers } from './layers.js';
 
 
-const settings = new GameSettings();
+
 
 const gameController = {
-    actors: [],
 
+
+    actors: [],
+    settings: new GameSettings(),
+    sceneManager: new SceneManager(),
 
     addActor: function (actor) {
         this.actors.push(actor);
@@ -24,6 +28,10 @@ const gameController = {
 
 
     update: function () {
+
+        if (this.sceneManager.currentScene) {
+            this.sceneManager.currentScene.update();
+        }
 
         for (let actor of this.actors) {
             if (actor.update) {
@@ -43,6 +51,10 @@ const gameController = {
 
 
     render: function (ctx) {
+
+        if (this.sceneManager.currentScene) {
+            this.sceneManager.currentScene.render();
+        }
         for (let actor of this.actors) {
             if (actor.render) {
                 actor.render(ctx);

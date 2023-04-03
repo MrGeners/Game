@@ -77,7 +77,7 @@ export class Scene {
         // To be overridden by derived classes
     }
 
-    draw() {
+    render() {
         // To be overridden by derived classes
     }
 }

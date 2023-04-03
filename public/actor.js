@@ -75,7 +75,7 @@ export class Actor {
     #collider;
     #transform;
 
-    constructor(x = 0, y = 0, sprite = null, collider = null) {
+    constructor(x = 0, y = 0, sprite = null, collider = null, layer = 0, z = 0) {
         this.name = "actor"
         this.#transform = new Transform();
         this.#collider = collider;
