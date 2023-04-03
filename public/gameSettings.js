@@ -29,7 +29,7 @@ class GameSettings {
         this.#middleGroundEffects = document.getElementById("effects2");
         this.#foregroundEffects = document.getElementById("effects3");
         this.#screens = document.querySelectorAll("canvas");
-        this.setCanvasResolution("fullscreen");
+        this.setCanvasResolution("1:1");
         this.updateCanvasContainerSize();
     }
 
@@ -40,6 +40,12 @@ class GameSettings {
         canvasContainer.style.height = `${canvas.height}px`;
     }
 
+    setCursorImg(img) {
+        if (img === null)
+            return;
+        document.body.style.cursor = `url(${img}), auto`;
+    }
+
 
     setCanvasResolution(mode) {
         const container = document.body; // Assuming the canvases are direct children of the body tag
@@ -48,8 +54,8 @@ class GameSettings {
         // Calculate the new dimensions based on the selected mode
         switch (mode) {
             case "1:1":
-                width = container.clientWidth;
-                height = container.clientWidth;
+                width = container.clientHeight;
+                height = container.clientHeight;
                 break;
             case "2:1":
                 width = container.clientWidth;
