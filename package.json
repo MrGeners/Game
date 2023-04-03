@@ -1,0 +1,14 @@
+{
+  "name": "game",
+  "version": "1.0.0",
+  "description": "for handling files and other things client js can't do",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Geners",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
