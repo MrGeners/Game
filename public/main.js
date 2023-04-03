@@ -3,7 +3,7 @@ import { processSounds } from './soundLoader.js';
 import { Actor, Transform, Sprite, Collider } from './actor.js';
 import { GameSettings } from './gameSettings.js';
 import { SceneManager, Scene } from './sceneManager.js';
-import { input } from './input.js';
+import { input } from './inputHandler.js';
 
 
 const settings = new GameSettings();
