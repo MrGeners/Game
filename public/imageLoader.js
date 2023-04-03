@@ -46,7 +46,7 @@ async function loadImages() {
         assetController.IMGnames[i] = assetController.IMGsources[i].replace(/\/assets\//g, "");
         assetController.percentageLoaded = Math.floor((i / assetController.IMGsources.length) * 100);
         document.getElementById("imageLoading").innerHTML = `<h1>LOADING IMAGES: ${assetController.percentageLoaded}%</h1>`;
-        console.log("Image: ", assetController.images[i]);
+
     }
     console.log('All images loaded');
     assetController.percentageLoaded = 100;

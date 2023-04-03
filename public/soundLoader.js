@@ -10,7 +10,7 @@ let fetchSoundSourcesAndLoadSounds = async () => {
 
 
 
-        console.log("assetController.SNDsources: ", assetController.SNDsources);
+
         return await loadSounds();
 
     } catch (err) {
@@ -20,10 +20,10 @@ let fetchSoundSourcesAndLoadSounds = async () => {
 
 let loadSound = (src) => {
     return new Promise((resolve, reject) => {
-        console.log("loadSound src: ", src);
+
         const sound = new Audio(src);
         sound.addEventListener('canplaythrough', () => {
-            console.log("sound: ", sound);
+
             resolve(sound);
         });
         sound.onerror = (err) => reject(err);
@@ -32,10 +32,10 @@ let loadSound = (src) => {
 }
 
 let loadSounds = async () => {
-    console.log("beginning loadSounds");
+
     //load all sounds
     for (let i = 0; i < assetController.SNDsources.length; i++) {
-        console.log("loading sound: ", assetController.SNDsources[i]);
+
         try {
             let sound = await loadSound(assetController.SNDsources[i]);
             assetController.sounds[i] = sound;

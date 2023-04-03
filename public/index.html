@@ -1,22 +1,65 @@
 <html>
   <head>
     <title></title>
+    <style>
+      #canvas-container {
+        position: relative;
+        width: 800px;
+        height: 600px;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      #loading-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 3px solid red;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #loading {
+        background-color: rgba(13, 13, 13, 0.8);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+      }
+    </style>
   </head>
   <body>
+    <div id="canvas-container">
+      <div id="loading-container">
+        <div id="loading">
+          <div id="imageLoading"></div>
+          <div id="soundLoading"></div>
+        </div>
+      </div>
+      <canvas
+        id="background"
+        width="800"
+        height="600"
+        style="border: 2px solid black"
+      ></canvas>
+      <canvas id="effects1" width="800" height="600"></canvas>
+      <canvas id="middle" width="800" height="600"></canvas>
+      <canvas id="effects2" width="800" height="600"></canvas>
+      <canvas id="foreground" width="800" height="600"></canvas>
+      <canvas id="effects3" width="800" height="600"></canvas>
+    </div>
+
     <script src="imageLoader.js"></script>
     <script src="soundLoader.js"></script>
     <script src="SAT.js"></script>
     <script src="gameSettings.js"></script>
     <script src="actor.js"></script>
     <script src="main.js"></script>
-
-    <div id="imageLoading"></div>
-    <div id="soundLoading"></div>
-    <canvas id="background" width="800" height="600"></canvas>
-    <canvas id="effects1" width="800" height="600"></canvas>
-    <canvas id="middle" width="800" height="600"></canvas>
-    <canvas id="effects2" width="800" height="600"></canvas>
-    <canvas id="foreground" width="800" height="600"></canvas>
-    <canvas id="effects3" width="800" height="600"></canvas>
   </body>
 </html>

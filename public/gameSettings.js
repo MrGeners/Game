@@ -1,4 +1,20 @@
-class gameSettings {
+//I have made this a class instead of an object literal for one reason
+//It may make it easier to add setting presets in the future
+//As a todo: make an array of preset settings and a function to switch between them
+
+class GameSettings {
+    #gameWidth;
+    #gameHeight;
+    #gameTitle;
+    #gameBackgroundColor;
+    #gameFPS;
+    #backgroundCanvas;
+    #foregroundCanvas;
+    #middleGroundCanvas;
+    #backgroundEffects;
+    #middleGroundEffects;
+    #foregroundEffects;
+    #screens;
 
     constructor() {
         this.#gameWidth = 800;
@@ -9,11 +25,21 @@ class gameSettings {
         this.#backgroundCanvas = document.getElementById("background");
         this.#foregroundCanvas = document.getElementById("foreground");
         this.#middleGroundCanvas = document.getElementById("middle");
-        this.#bacgroundEffects = document.getElementById("effects1");
+        this.#backgroundEffects = document.getElementById("effects1");
         this.#middleGroundEffects = document.getElementById("effects2");
         this.#foregroundEffects = document.getElementById("effects3");
         this.#screens = document.querySelectorAll("canvas");
+        this.setCanvasResolution("fullscreen");
+        this.updateCanvasContainerSize();
     }
+
+    updateCanvasContainerSize() {
+        const canvas = document.getElementById("background");
+        const canvasContainer = document.getElementById("canvas-container");
+        canvasContainer.style.width = `${canvas.width}px`;
+        canvasContainer.style.height = `${canvas.height}px`;
+    }
+
 
     setCanvasResolution(mode) {
         const container = document.body; // Assuming the canvases are direct children of the body tag
@@ -46,6 +72,9 @@ class gameSettings {
             canvas.width = width;
             canvas.height = height;
         });
+
+        // Update the canvas container size
+        this.updateCanvasContainerSize();
     }
 
 
