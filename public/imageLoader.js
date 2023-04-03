@@ -1,6 +1,6 @@
 //declare all image sources within this array
 
-let assetController = {
+const assetController = {
 
     IMGsources: [],
     IMGnames: [],

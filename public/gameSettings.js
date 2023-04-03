@@ -42,7 +42,7 @@ class gameSettings {
         }
 
         // Set the new dimensions for each canvas
-        screens.forEach((canvas) => {
+        this.#screens.forEach((canvas) => {
             canvas.width = width;
             canvas.height = height;
         });
