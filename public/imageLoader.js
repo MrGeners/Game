@@ -1,6 +1,6 @@
 //declare all image sources within this array
 
-const assetController = {
+export const assetController = {
 
     IMGsources: [],
     IMGnames: [],
@@ -54,13 +54,13 @@ async function loadImages() {
 }
 
 
-let grabImage = (src) => {
+export const grabImage = (src) => {
     return assetController.images.find((image) => {
         return image.src.includes(src);
     });
 }
 
 
-let processImages = () => {
+export const processImages = () => {
     return fetchImageSourcesAndLoadImages();
 }

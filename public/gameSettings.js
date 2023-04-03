@@ -2,7 +2,7 @@
 //It may make it easier to add setting presets in the future
 //As a todo: make an array of preset settings and a function to switch between them
 
-class GameSettings {
+export class GameSettings {
     #gameWidth;
     #gameHeight;
     #gameTitle;
@@ -82,8 +82,4 @@ class GameSettings {
         // Update the canvas container size
         this.updateCanvasContainerSize();
     }
-
-
-
-
 }

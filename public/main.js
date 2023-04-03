@@ -1,3 +1,10 @@
+import { processImages, assetController } from './imageLoader.js';
+import { processSounds } from './soundLoader.js';
+import { Actor, Transform, Sprite, Collider } from './actor.js';
+import { GameSettings } from './gameSettings.js';
+import { SceneManager, Scene } from './sceneManager.js';
+
+
 const input = {
     keys: {},
     prevKeys: {},

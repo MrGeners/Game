@@ -1,5 +1,5 @@
 
-class Transform {
+export class Transform {
     constructor() {
         this.x = 0;
         this.y = 0;
@@ -9,7 +9,7 @@ class Transform {
     }
 }
 
-class Collider {
+export class Collider {
     constructor(type = "circle", radius = 0, points = []) {
         this.type = type;
         this.radius = radius;
@@ -18,7 +18,7 @@ class Collider {
 }
 
 
-class Sprite {
+export class Sprite {
     constructor(image = new Image(), offsetX = 0, offsetY = 0, frameWidth = 0, frameHeight = 0, frameCount = 1, frameRate = 0, originX = null, originY = null) {
         this.image = image;
         this.width = image.width;
@@ -68,7 +68,7 @@ class Sprite {
 }
 
 
-class Actor {
+export class Actor {
 
     #name;
     #sprite;

@@ -1,16 +1,11 @@
 
-
-
+import { assetController } from '/imageLoader.js';
 
 let fetchSoundSourcesAndLoadSounds = async () => {
     try {
         const response = await fetch('/api/sounds');
         const soundSources = await response.json();
         assetController.SNDsources = soundSources;
-
-
-
-
         return await loadSounds();
 
     } catch (err) {
@@ -56,6 +51,6 @@ let grabSound = (src) => {
     });
 }
 
-let processSounds = () => {
+export const processSounds = () => {
     return fetchSoundSourcesAndLoadSounds();
 }
