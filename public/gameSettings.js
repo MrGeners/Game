@@ -78,8 +78,18 @@ export class GameSettings {
             canvas.width = width;
             canvas.height = height;
         });
+        this.#gameWidth = width;
+        this.#gameHeight = height;
 
         // Update the canvas container size
         this.updateCanvasContainerSize();
     }
+
+    get gameWidth() {
+        return this.#gameWidth;
+    }
+    get gameHeight() {
+        return this.#gameHeight;
+    }
+
 }

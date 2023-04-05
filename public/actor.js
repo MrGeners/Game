@@ -1,4 +1,4 @@
-
+import { Polygon, Circle, Vector } from './tasWrapper.js';
 export class Transform {
     constructor() {
         this.x = 0;
@@ -25,8 +25,8 @@ export class Sprite {
         this.height = image.height;
         this.offsetX = offsetX;
         this.offsetY = offsetY;
-        this.frameWidth = frameWidth;
-        this.frameHeight = frameHeight;
+        this.frameWidth = frameWidth == 0 ? image.width : frameWidth;
+        this.frameHeight = frameHeight == 0 ? image.height : frameHeight;
         this.frameCount = frameCount;
         this.frameRate = frameRate;
         this.currentFrame = 0;
@@ -46,7 +46,11 @@ export class Sprite {
     }
 
     draw(ctx, x, y, rotation = 0, scaleX = 1, scaleY = 1) {
+
+
+
         if (this.image) {
+
             ctx.save();
             ctx.translate(x, y);
             ctx.rotate(rotation);
@@ -75,7 +79,7 @@ export class Actor {
     #collider;
     #transform;
 
-    constructor(x = 0, y = 0, sprite = null, collider = null, layer = 0, z = 0) {
+    constructor(ctx = document.getElementById("middle").getContext("2d"), x = 0, y = 0, sprite = null, collider = null, layer = 0, z = 0) {
         this.name = "actor"
         this.#transform = new Transform();
         this.#collider = collider;
@@ -83,6 +87,7 @@ export class Actor {
         this.#transform.x = x;
         this.#transform.y = y;
         this.substantiateCollider(collider);
+        this.ctx = ctx;
 
     }
 
@@ -91,9 +96,15 @@ export class Actor {
     }
 
     update() {
+        if (this.#sprite) {
+            this.#sprite.update();
+        }
     }
 
     draw() {
+        if (this.#sprite) {
+            this.#sprite.draw(this.ctx, this.#transform.x, this.#transform.y, this.#transform.rotation, this.#transform.scaleX, this.#transform.scaleY);
+        }
     }
 
     substantiateCollider(collider) {

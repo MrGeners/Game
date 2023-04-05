@@ -1,14 +1,25 @@
 {
   "name": "game",
   "version": "1.0.0",
-  "description": "for handling files and other things client js can't do",
-  "main": "server.js",
+ 
+  "description": "",
+  "main": "main.js",
   "scripts": {
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Geners",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrGeners/Game.git"
+  },
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.2"
+  "bugs": {
+    "url": "https://github.com/MrGeners/Game/issues"
+  },
+  "homepage": "https://github.com/MrGeners/Game#readme",
+  "devDependencies": {
+    "electron": "^24.0.0"
   }
 }
